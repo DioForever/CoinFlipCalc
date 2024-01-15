@@ -14,7 +14,7 @@ class CoinFlip
 
         for (int t = 0; t < triesSize; t++)
         {
-            int repetition = 1;
+            int repetition = 0;
             bool coinTypeRep = flipCoin();
 
 
@@ -22,7 +22,7 @@ class CoinFlip
             {
                 bool coinType = flipCoin();
                 if (coinTypeRep == coinType) repetition++;
-                else { repetition = 1; coinTypeRep = coinType; }
+                else { repetition = 0; coinTypeRep = coinType; }
                 if (repetition == repDesired) repReachedCounter++;
             }
         }
@@ -35,7 +35,6 @@ class CoinFlip
     {
         Random r = new Random();
         int rand = r.Next(0, 2);
-        // System.Console.WriteLine(rand);
         if (rand == 1) return true;
         return false;
     }
