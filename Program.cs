@@ -26,7 +26,7 @@ class CoinFlip
                 if (repetition == repDesired) repReachedCounter++;
             }
         }
-        System.Console.WriteLine($"{repReachedCounter}/{triesSize}");
+        System.Console.WriteLine($"{repReachedCounter}/{triesSize} => {(double)(repReachedCounter) / (double)(triesSize) * 100}%");
 
 
     }
