@@ -14,7 +14,7 @@ class CoinFlip
 
         for (int t = 0; t < triesSize; t++)
         {
-            int repetition = 0;
+            int repetition = 1;
             bool coinTypeRep = flipCoin();
 
 
@@ -22,8 +22,8 @@ class CoinFlip
             {
                 bool coinType = flipCoin();
                 if (coinTypeRep == coinType) repetition++;
-                else { repetition = 0; coinTypeRep = coinType; }
-                if (repetition == repDesired) repReachedCounter++;
+                else { repetition = 1; coinTypeRep = coinType; }
+                if (repetition == repDesired) { repReachedCounter++; break; }
             }
         }
         System.Console.WriteLine($"{repReachedCounter}/{triesSize} => {(double)(repReachedCounter) / (double)(triesSize) * 100}%");
